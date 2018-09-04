@@ -16,12 +16,15 @@ ugfx.clear()
 
 time = ugfx.Label(90, 0, 60, 16, "13:37", justification=ugfx.Label.CENTER)
 
-for x in range(2):
-    for y in range(2):
+apps = get_apps()
+
+for x in range(3):
+    for y in range(3):
+        i = (y * 3) + x
         root_x = 16 + (74 * x)
         root_y = 30 + (91 * y)
-        ugfx.area(root_x, root_y, 60, 60, ugfx.BLACK)
-        ugfx.Label(root_x, root_y + 60, 60, 16, "App", justification=ugfx.Label.CENTER)
+        ugfx.area(root_x, root_y, 60, 60, ugfx.GRAY)
+        ugfx.Label(root_x - 7, root_y + 60, 74, 16, apps[i].title, justification=ugfx.Label.CENTER)
 
 while True:
     sleep.wfi()
